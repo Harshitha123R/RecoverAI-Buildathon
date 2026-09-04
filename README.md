@@ -1,0 +1,1 @@
+RecoverAI is an AI-powered revenue recovery system that identifies failed payments with high recovery potential, recommends compliant recovery actions, and tracks the outcome through an auditable workflow.

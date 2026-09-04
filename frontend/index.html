@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RecoverAI | Revenue Recovery</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        /* HEADER */
+
+        header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            font-size: 14px;
+            font-weight: normal;
+            color: #6b7280;
+            margin-left: 8px;
+        }
+
+        .status {
+            background: #ecfdf5;
+            color: #047857;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* MAIN */
+
+        .container {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .title {
+            margin-bottom: 25px;
+        }
+
+        .title h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .title p {
+            color: #6b7280;
+            margin-top: 8px;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .stat {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .stat p {
+            color: #6b7280;
+            margin: 0 0 8px;
+            font-size: 14px;
+        }
+
+        .stat h2 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        /* GRID */
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        /* FORM */
+
+        label {
+            display: block;
+            margin-top: 14px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #d1d5db;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            background: #111827;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* RESULT */
+
+        .result {
+            text-align: center;
+        }
+
+        .result-placeholder {
+            color: #9ca3af;
+            padding: 70px 10px;
+        }
+
+        .probability {
+            font-size: 52px;
+            font-weight: bold;
+            margin: 25px 0 5px;
+        }
+
+        .probability-label {
+            color: #6b7280;
+        }
+
+        .action {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            background: #ecfdf5;
+            color: #047857;
+        }
+
+        .explanation {
+            color: #6b7280;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 750px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 18px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🤖 RecoverAI
+        <span>Revenue Recovery Intelligence</span>
+    </div>
+
+    <div class="status">
+        ● AI System Online
+    </div>
+
+</header>
+
+
+<div class="container">
+
+    <div class="title">
+
+        <h1>Payment Recovery Dashboard</h1>
+
+        <p>
+            Predict failed-payment recovery and choose the safest next action.
+        </p>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <p>Payments Analyzed</p>
+
+            <h2>1,248</h2>
+
+        </div>
+
+
+        <div class="stat">
+
+            <p>Revenue At Risk</p>
+
+            <h2>₹2.4L</h2>
+
+        </div>
+
+
+        <div class="stat">
+
+            <p>Potentially Recoverable</p>
+
+            <h2>₹1.7L</h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN GRID -->
+
+    <div class="grid">
+
+
+        <!-- PAYMENT FORM -->
+
+        <div class="card">
+
+            <h2>Analyze Failed Payment</h2>
+
+            <p style="color:#6b7280;">
+                Enter payment information to get an AI recommendation.
+            </p>
+
+
+            <label>Amount (₹)</label>
+
+            <input
+                id="amount"
+                type="number"
+                value="2500"
+            >
+
+
+            <label>Previous Successful Payments</label>
+
+            <input
+                id="successes"
+                type="number"
+                value="8"
+            >
+
+
+            <label>Previous Failed Payments</label>
+
+            <input
+                id="failures"
+                type="number"
+                value="1"
+            >
+
+
+            <label>Retry Count</label>
+
+            <input
+                id="retry"
+                type="number"
+                value="0"
+            >
+
+
+            <label>Customer Age (days)</label>
+
+            <input
+                id="age"
+                type="number"
+                value="300"
+            >
+
+
+            <label>Payment Method</label>
+
+            <select id="method">
+
+                <option>UPI</option>
+
+                <option>Card</option>
+
+                <option>NetBanking</option>
+
+                <option>Wallet</option>
+
+            </select>
+
+
+            <label>Failure Type</label>
+
+            <select id="failure">
+
+                <option>temporary</option>
+
+                <option>network</option>
+
+                <option>declined</option>
+
+                <option>expired</option>
+
+            </select>
+
+
+            <label>Hour</label>
+
+            <input
+                id="hour"
+                type="number"
+                value="14"
+            >
+
+
+            <button onclick="analyzePayment()">
+                Analyze Payment
+            </button>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div class="card result">
+
+            <h2>AI Recommendation</h2>
+
+            <div id="placeholder" class="result-placeholder">
+
+                Enter payment details and click
+                <b>Analyze Payment</b>.
+
+            </div>
+
+
+            <div id="analysis" style="display:none;">
+
+                <div
+                    id="probability"
+                    class="probability"
+                >
+                    --
+                </div>
+
+                <div class="probability-label">
+                    Recovery Probability
+                </div>
+
+
+                <div
+                    id="action"
+                    class="action"
+                >
+                    --
+                </div>
+
+
+                <p
+                    id="explanation"
+                    class="explanation"
+                >
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+async function analyzePayment() {
+
+    const payment = {
+
+        amount:
+            Number(document.getElementById("amount").value),
+
+        previous_successes:
+            Number(document.getElementById("successes").value),
+
+        previous_failures:
+            Number(document.getElementById("failures").value),
+
+        retry_count:
+            Number(document.getElementById("retry").value),
+
+        customer_age_days:
+            Number(document.getElementById("age").value),
+
+        payment_method:
+            document.getElementById("method").value,
+
+        failure_type:
+            document.getElementById("failure").value,
+
+        hour:
+            Number(document.getElementById("hour").value)
+    };
+
+
+    try {
+
+        const response = await fetch(
+            "http://127.0.0.1:8000/predict",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(payment)
+            }
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error("API request failed");
+
+        }
+
+
+        const result = await response.json();
+
+
+        document.getElementById("placeholder")
+            .style.display = "none";
+
+
+        document.getElementById("analysis")
+            .style.display = "block";
+
+
+        document.getElementById("probability")
+            .innerText =
+            result.recovery_probability + "%";
+
+
+        document.getElementById("action")
+            .innerText =
+            result.recommended_action;
+
+
+        if (result.recommended_action === "RETRY") {
+
+            document.getElementById("explanation")
+                .innerText =
+                "High recovery likelihood. The payment failure appears suitable for another attempt.";
+
+        }
+
+        else if (
+            result.recommended_action === "NOTIFY CUSTOMER"
+        ) {
+
+            document.getElementById("explanation")
+                .innerText =
+                "Moderate recovery likelihood. Customer notification is recommended before another attempt.";
+
+        }
+
+        else {
+
+            document.getElementById("explanation")
+                .innerText =
+                "Low recovery likelihood or retry limit reached. Further automatic retries are not recommended.";
+
+        }
+
+    }
+
+    catch (error) {
+
+        alert(
+            "Could not connect to RecoverAI backend. Make sure the FastAPI server is running."
+        );
+
+        console.error(error);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
